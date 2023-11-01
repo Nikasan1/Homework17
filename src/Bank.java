@@ -19,12 +19,15 @@ public class Bank {
             } else if (exchangeRate[i] > maxExchangeRate) {
                 maxExchangeRate = exchangeRate[i];
                 temp[0] = i;
-            } else if (exchangeRate[i] == maxExchangeRate) {
-                j++;
-                temp[j] = i;
             }
         }
-        for (int i = 0; i < j + 1; i++) {
+        for (int i = 0; i < 14; i++) {
+            if (exchangeRate[i] == maxExchangeRate) {
+                temp[j] = i;
+                j++;
+            }
+        }
+        for (int i = 0; i < j; i++) {
             System.out.println("Найвигідніший курс було знайдено в банку : " + bankName[temp[i]] + ", за курсом: " + maxExchangeRate + "грн за 1$.");
         }
         /*System.out.println(Arrays.toString(exchangeRate)); *//*Контрольні стрічки*//*
